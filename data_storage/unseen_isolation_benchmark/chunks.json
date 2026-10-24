@@ -1,0 +1,34 @@
+[
+  {
+    "chunk_id": "Aurora_Helios_Report_2031.pdf_p1_c0",
+    "document": "Aurora_Helios_Report_2031.pdf",
+    "page": 1,
+    "text": "Aurora Biotech Global Limited Annual Report FY 2031\nAurora Biotech reported total consolidated revenue of 842.5 million credits for FY 2031.\nIn November 2031, Phase III trials for the neuro-regenerative compound ABX-99 achieved a 94.2% primary efficacy rate.",
+    "entities": [
+      "Aurora Biotech Global Limited",
+      "Helios Space Propulsion Corporation"
+    ],
+    "periods": [
+      "FY 2031",
+      "2031"
+    ],
+    "scope": null,
+    "doc_type": "annual_report"
+  },
+  {
+    "chunk_id": "Aurora_Helios_Report_2031.pdf_p2_c1",
+    "document": "Aurora_Helios_Report_2031.pdf",
+    "page": 2,
+    "text": "Helios Space Propulsion Corporation Financial Review 2031\nHelios completed static fire testing of the ion-thruster engine H-700 with a total fuel efficiency of 98.4%.\nThe Research & Development expenditure for the ion thruster project was capitalized at 112.4 million credits.",
+    "entities": [
+      "Aurora Biotech Global Limited",
+      "Helios Space Propulsion Corporation"
+    ],
+    "periods": [
+      "FY 2031",
+      "2031"
+    ],
+    "scope": null,
+    "doc_type": "annual_report"
+  }
+]

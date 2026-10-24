@@ -1,0 +1,223 @@
+{
+  "summary": {
+    "avg_answer_precision": 0.5087179487179487,
+    "avg_answer_recall": 0.6193939393939394,
+    "avg_context_precision": 0.2,
+    "avg_context_recall": 1.1,
+    "avg_latency_ms": 8461.646,
+    "total_cost_usd_est": 0.00312
+  },
+  "per_question": [
+    {
+      "answer_precision": 0.07692307692307693,
+      "answer_recall": 1.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "answer_detail": {
+        "matched_ids": [
+          "bp1"
+        ],
+        "missing_ids": [],
+        "extra_ids": [
+          "ap1",
+          "ap2",
+          "ap3",
+          "ap4",
+          "ap5",
+          "ap6",
+          "ap7",
+          "ap8",
+          "ap9",
+          "ap10",
+          "ap11",
+          "ap12"
+        ],
+        "benchmark_points": {
+          "bp1": "No information was retrieved for this question."
+        },
+        "agent_points": {
+          "ap1": "The retrieved sources do not contain individual stress capital buffer assignments for any US GSIB for the 2025\u201326 cycle.",
+          "ap2": "The stress capital buffer is described as one of the four pillars of the large-bank capital framework (board-memo-basel-gsib-standardized-approach.pdf p.2).",
+          "ap3": "The stress capital buffer is described as being informed by stress tests proposed on October 24, 2025 (board-memo-basel-gsib-standardized-approach.pdf p.2, p.5).",
+          "ap4": "The framework revisions for the stress tests proposed on October 24, 2025 are described as improving transparency and reducing excess volatility in the stress capital buffer requirement (board-memo-basel-gsib-standardized-approach.pdf p.2, p.5).",
+          "ap5": "The stress capital buffer is described as interacting with the proposed changes (board-memo-basel-gsib-standardized-approach.pdf p.2, p.5).",
+          "ap6": "The proposed changes are described as overlapping with operational risk and trading activities (board-memo-basel-gsib-standardized-approach.pdf p.2).",
+          "ap7": "The AOCI impact estimate is described as not reflecting any interaction with stress capital buffer requirements (board-memo-basel-gsib-standardized-approach.pdf p.12).",
+          "ap8": "Stress-test impact estimates are described as independent of components that inform the Board's stress capital buffer determinations for specific firms (board-memo-basel-gsib-standardized-approach.pdf p.11).",
+          "ap9": "No firm-specific stress capital buffer figures are provided.",
+          "ap10": "Aggregate projected capital impacts are given instead.",
+          "ap11": "Aggregate projected capital impacts include a 6.0% decrease in tier 1 capital requirements for Category I and II firms inclusive of stress-test and leverage changes (board-memo-basel-gsib-standardized-approach.pdf p.11).",
+          "ap12": "The aggregate projected capital impacts are not individual GSIB stress capital buffers.",
+          "ap13": "No information was retrieved for this question."
+        }
+      },
+      "id": "B32",
+      "latency_ms": 13340.44,
+      "tokens_est": 1886,
+      "cost_usd_est": 0.000377
+    },
+    {
+      "answer_precision": 0.3333333333333333,
+      "answer_recall": 1.0,
+      "context_precision": 0.25,
+      "context_recall": 2.0,
+      "answer_detail": {
+        "matched_ids": [
+          "bp1",
+          "bp2",
+          "bp3"
+        ],
+        "missing_ids": [],
+        "extra_ids": [
+          "ap3",
+          "ap4",
+          "ap5",
+          "ap6"
+        ],
+        "benchmark_points": {
+          "bp1": "The rough Bergomi pricing routine used 60,000 Monte Carlo paths.",
+          "bp2": "The rough Bergomi pricing routine generated the prices in the tests.",
+          "bp3": "The source is 2012.07440v3.pdf p15."
+        },
+        "agent_points": {
+          "ap1": "The rough Bergomi pricing routine used 60,000 Monte Carlo paths to generate prices in the tests.",
+          "ap2": "The rough Bergomi pricing routine's use of 60,000 Monte Carlo paths is reported on p.15 of 2012.07440v3.pdf.",
+          "ap3": "Page 20 of 2012.07440v3.pdf corroborates the use of 60,000 Monte Carlo paths.",
+          "ap4": "Page 20 of 2012.07440v3.pdf notes the average evaluation time for the pricing function.",
+          "ap5": "The average evaluation time noted on p.20 is for C++.",
+          "ap6": "The average evaluation time noted on p.20 uses 60,000 paths."
+        }
+      },
+      "id": "C31",
+      "latency_ms": 5528.14,
+      "tokens_est": 3859,
+      "cost_usd_est": 0.000772
+    },
+    {
+      "answer_precision": 0.8,
+      "answer_recall": 0.3333333333333333,
+      "context_precision": 0.375,
+      "context_recall": 1.5,
+      "answer_detail": {
+        "matched_ids": [
+          "bp1"
+        ],
+        "missing_ids": [
+          "bp2",
+          "bp3"
+        ],
+        "extra_ids": [
+          "ap4"
+        ],
+        "benchmark_points": {
+          "bp1": "D. Sundaram chairs the Risk Management Committee of Infosys.",
+          "bp2": "infosys-ar-26.pdf p108 lists D. Sundaram as \"Chairperson\" of the Risk Management Committee as on March 31, 2026.",
+          "bp3": "infosys-ar-26.pdf p109 contains D. Sundaram's signature as Chairperson on the Risk Management Committee's report for the year ended March 31, 2026."
+        },
+        "agent_points": {
+          "ap1": "D. Sundaram chairs the Risk Management Committee of Infosys.",
+          "ap2": "D. Sundaram is listed as \"D. Sundaram, Chairperson\".",
+          "ap3": "D. Sundaram is among the Risk Management Committee's members.",
+          "ap4": "The Risk Management Committee has seven members.",
+          "ap5": "The Risk Management Committee's report is signed \"D. Sundaram, Chairperson\"."
+        }
+      },
+      "id": "A35",
+      "latency_ms": 7706.93,
+      "tokens_est": 2922,
+      "cost_usd_est": 0.000584
+    },
+    {
+      "answer_precision": 0.6666666666666666,
+      "answer_recall": 0.4,
+      "context_precision": 0.125,
+      "context_recall": 1.0,
+      "answer_detail": {
+        "matched_ids": [
+          "bp1",
+          "bp2"
+        ],
+        "missing_ids": [
+          "bp3",
+          "bp4",
+          "bp5"
+        ],
+        "extra_ids": [
+          "ap3"
+        ],
+        "benchmark_points": {
+          "bp1": "Banque Saudi Fransi's NPL coverage ratio was 178.4% in 2025.",
+          "bp2": "Banque Saudi Fransi's NPL coverage ratio was down 3.3 percentage points year on year.",
+          "bp3": "The figure is cited to BSF-2025 Integrated Annual Report.pdf page 52.",
+          "bp4": "The excerpt is from the 2025 Financial Review.",
+          "bp5": "The excerpt gives the NPL coverage ratio figure without an explicit \"end of year\" label."
+        },
+        "agent_points": {
+          "ap1": "Banque Saudi Fransi's NPL coverage ratio was 178.4% at the end of 2025.",
+          "ap2": "Banque Saudi Fransi's NPL coverage ratio decreased by 3.3 percentage points year-over-year.",
+          "ap3": "The source cited is BSF-2025 Integrated Annual Report.pdf p.51."
+        }
+      },
+      "id": "A34",
+      "latency_ms": 7635.57,
+      "tokens_est": 4003,
+      "cost_usd_est": 0.000801
+    },
+    {
+      "answer_precision": 0.6666666666666666,
+      "answer_recall": 0.36363636363636365,
+      "context_precision": 0.25,
+      "context_recall": 1.0,
+      "answer_detail": {
+        "matched_ids": [
+          "bp1",
+          "bp2",
+          "bp3",
+          "bp4"
+        ],
+        "missing_ids": [
+          "bp5",
+          "bp6",
+          "bp7",
+          "bp8",
+          "bp9",
+          "bp10",
+          "bp11"
+        ],
+        "extra_ids": [
+          "ap4",
+          "ap5",
+          "ap9"
+        ],
+        "benchmark_points": {
+          "bp1": "Acuit\u00e9 Ratings & Research Limited is a credit rating agency.",
+          "bp2": "Acuit\u00e9 Ratings & Research Limited is SEBI-registered.",
+          "bp3": "Acuit\u00e9 Ratings & Research Limited reaffirmed the credit ratings on the Company's bank loan facilities.",
+          "bp4": "Acuit\u00e9 Ratings & Research Limited's letter is dated January 08, 2026.",
+          "bp5": "The rating agency statement is cited to page 76 of Refex Industries_Annual Report FY 202526.pdf.",
+          "bp6": "The rating agency statement is cited to page 121 of Refex Industries_Annual Report FY 202526.pdf.",
+          "bp7": "The excerpts do not state the long-term rating figure.",
+          "bp8": "Page 76 refers to a table of the reaffirmed ratings.",
+          "bp9": "Page 121 refers to a table of the reaffirmed ratings.",
+          "bp10": "The table of reaffirmed ratings is only available as an image.",
+          "bp11": "The contents of the table of reaffirmed ratings are not in the text provided."
+        },
+        "agent_points": {
+          "ap1": "The rating agency is Acuit\u00e9 Ratings & Research Limited.",
+          "ap2": "Acuit\u00e9 Ratings & Research Limited is a SEBI Registered Credit Rating Agency.",
+          "ap3": "The long-term rating was reaffirmed.",
+          "ap4": "The long-term rating is ACUITE A-.",
+          "ap5": "The long-term rating outlook is Stable.",
+          "ap6": "The long-term rating applies to Long Term Bank Facilities \u2013 Term Loans.",
+          "ap7": "The long-term rating reaffirmation was communicated by a letter dated January 08, 2026.",
+          "ap8": "The short-term rating on Cash Credit was reaffirmed.",
+          "ap9": "The short-term rating on Cash Credit is ACUITE A2+."
+        }
+      },
+      "id": "A33",
+      "latency_ms": 8097.15,
+      "tokens_est": 2932,
+      "cost_usd_est": 0.000586
+    }
+  ]
+}

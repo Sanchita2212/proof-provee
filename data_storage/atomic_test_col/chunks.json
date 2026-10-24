@@ -1,0 +1,992 @@
+[
+  {
+    "chunk_id": "v1_doc.pdf_p1_c0",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 1,
+    "page_numbers": [
+      1
+    ],
+    "text": "Two-factor LIBOR Markov-functional model\nMike Bennett and Joanne Kennedy\nOctober 2005\n1 Introduction\nIn this document, we give a brief introduction on the two-factor LIBOR Markov-functional model\nfor which its theoretical construction and numerical implementation hasn\u2019t been available in the\ncurrent literature. The two-factor LIBOR Markov-functional model is similar to the one-factor\nversion but uses the idea of \u201cpre-model\u201d for successful implementation. For the original idea on\npre-model, see (Hunt & Kennedy, 2004). In the coming sections, we will \ufb01rst describe the two-\nfactor separable LIBOR market model and the pre-models based on it. We then proceed to the\ndetailed construction and implementation of the two-factor LIBOR",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p1_c1",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 1,
+    "page_numbers": [
+      1
+    ],
+    "text": "ased on it. We then proceed to the\ndetailed construction and implementation of the two-factor LIBOR Markov-functional model. At\neach step, we provide su\ufb03cient information on the C++ code enclosed with this document.\n2 The two-factor LIBOR market model\n2.1 Notations and de\ufb01nitions\nIn this section, we set up the notation that we use throughout the discussion of the LIBOR market\nmodel and Markov-functional model in this document. Let DtT denote the time\u2212t value of a zero-\ncoupon discount bond with maturity T . Let 0 = T0<T 1<T 2<\u00b7\u00b7\u00b7 <T n+1 be the tenor structure\nfor i = 1,...,n . We de\ufb01ne the corresponding forward LIBORs as follows\nLit := DtTi\u2212DtTi+1\n\u03b1iDtTi+1\n,\nwhere \u03b1i :=Ti+1\u2212Ti are the accrual factors.\nWe develop all models under the",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p1_c2",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 1,
+    "page_numbers": [
+      1
+    ],
+    "text": "DtTi\u2212DtTi+1\n\u03b1iDtTi+1\n,\nwhere \u03b1i :=Ti+1\u2212Ti are the accrual factors.\nWe develop all models under the terminal measureF, which is the equivalent martingale measure\nassociated with the numeraire D.Tn+1. It is convenient to de\ufb01ne the numeraire-rebased discount\nbonds\n\u02c6DtT := DtTDtTn+1,\nwhich by de\ufb01nition satisfy the recurrence relationship\n\u02c6DtTi = (1 +\u03b1iLit) \u02c6DtTi+1.\nC++ code: For the construction of the yield curve, see DfCurve.h and DfCurve.cpp. In this\nclass, the yield curve may be set to be increasing, decreasing, \ufb02at or the actual market data.\n1",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p2_c3",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 2,
+    "page_numbers": [
+      2
+    ],
+    "text": "2.2 Standard speci\ufb01cation of the two-factor LIBOR market model\nUnder the two-factor LIBOR market model (Brace, Gatarek, & Musiela, 1997), each of the forward\nLIBORs Li solves an SDE of the form\ndLit =\u00b5i(t)Litdt +\u03c3i(t)Lit.dWt, (1)\nfori = 1,...,n where\u03c3i : [0,Ti]\u2192 R2 andW = (W 1,W 2)T is a two-dimensional Brownian motion\nsuch that\ndW 1t dW 2t =\u03c1dt,\nfor some \u03c1\u2208 [\u22121, 1]. In the following, we shall assume the volatility structure is separable, that is,\n\u03c3i may be written in the form\n\u03c3i(t) = (\u03bd1i\u03c31t,\u03bd 2i\u03c32t ),\nfor some instantaneous volatility functions \u03c31,\u03c3 2 : [0,Tn] \u2192 R+ and constant vectors \u03bdi :=\n(\u03bd1i,\u03bd 2i )\u2208 R2,i = 1,...,n .\nIf the model is to be arbitrage-free under F, the drift term must have the following form, for\n1\u2264i\u2264n\n\u00b5i(Li+1t ,...,L",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p2_c4",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 2,
+    "page_numbers": [
+      2
+    ],
+    "text": "o be arbitrage-free under F, the drift term must have the following form, for\n1\u2264i\u2264n\n\u00b5i(Li+1t ,...,L nt,t ) =\u2212\nn\u2211\nj=i+1\n(\n\u03b1jLjt\n1 +\u03b1jLjt\n)\nsijt , (2)\nwhere\nsijt :=\u03bd1i\u03bd1j (\u03c31t )2 + (\u03bd1i\u03bd2j +\u03bd2i\u03bd1j )\u03c1\u03c31t\u03c32t +\u03bd2i\u03bd2j (\u03c32t )2. (3)\nThe drift \u00b5n of the terminal LIBOR Ln is zero because Ln is a martingale.\nLet x = (x1,x 2)T be de\ufb01ned by\nx1t :=\n\u222b t\n0\n\u03c31sdW 1s, x 2t :=\n\u222b t\n0\n\u03c32sdW 2s, (4)\nthen \u222b t\n0\n\u03c3i(t).dWt =\n\u222b t\n0\n\u03bdi.dxt =\u03bdi.xt. (5)\nThe Markov process x will be the driving process of our two-factor LIBOR Markov-functional\nmodel.\nFor future convenience, let\nuit :=\u03bd1ix1t +\u03bd2ix2t. (6)\nThe solution to the SDE for the separable two-factor LIBOR market model may now be written in\nthe form\nLit =Li0 exp\n(\u222b t\n0\n\u00b5i(s)ds\u2212 12[ui]t +uit\n)\n. (7)\nIn addition,",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p2_c5",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 2,
+    "page_numbers": [
+      2
+    ],
+    "text": "model may now be written in\nthe form\nLit =Li0 exp\n(\u222b t\n0\n\u00b5i(s)ds\u2212 12[ui]t +uit\n)\n. (7)\nIn addition, de\ufb01ne for 1 \u2264 j < k\u2264 n the following integrals of the respective instantaneous\nvolatilities of the driving process x:\n\u03be11j,k :=\n\u222b Tk\nTj\n(\u03c31s)2ds, \u03be 22j,k :=\n\u222b Tk\nTj\n(\u03c32s)2ds, \u03be 12j,k :=\n\u222b Tk\nTj\n\u03c1\u03c31s\u03c32sds. (8)\n2",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p3_c6",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 3,
+    "page_numbers": [
+      3
+    ],
+    "text": "The variance of the process ui at Ti may now be written as\n[ui]Ti = (\u03bd1i )2\u03be110,i + 2\u03bd1i\u03bd2i\u03be120,i + (\u03bd2i )2\u03be220,i. (9)\nWe choose to specify our market model such that it is consistent with the Black caplet implied\nvolatility~\u03c3i corresponding to each of the forward LIBORs LiTi. In this case, [ ui]Ti = (~\u03c3i)2Ti. This\nimplies some restriction on the speci\ufb01cation of the driving process (see section 3.3.3).\nC++ code: For the implementation of the two-factor LIBOR market model, see LiborDriftAp-\nprox.h and LiborDriftApprox.cpp. This class contains the interface for both the full implementation\nof the LIBOR market model (full simulation) and the pre-model for the LIBOR Markov-functional\nmodel (described in the next section).\n3 The two-factor",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p3_c7",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 3,
+    "page_numbers": [
+      3
+    ],
+    "text": "e pre-model for the LIBOR Markov-functional\nmodel (described in the next section).\n3 The two-factor LIBOR Markov-functional model\n3.1 Overview of the construction of the model\nIn this section, we describe the simpler method of constructing a two-dimensional LIBOR Markov-\nfunctional model: a straightforward method that may be used if the pre-model \u02dcLiTi(uiTi,viTi) maybe\nwritten as a monotonic increasing function of uiTi only. As the more general pre-model with a\nmore computationally intensive method is not so di\ufb00erent from the simple one, e.g. Brownian\nBridge pre-model, we will describe it in the appendix. The simple pre-model suggested by (Hunt\n& Kennedy, 2004) is the \ufb01rst type and thus admits a straightforward implementation, whereas the",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p3_c8",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 3,
+    "page_numbers": [
+      3
+    ],
+    "text": "unt\n& Kennedy, 2004) is the \ufb01rst type and thus admits a straightforward implementation, whereas the\ntwo-dimensional drift approximation pre-model does not.\nThe two-dimensional driving process of the Markov-functional model, x, is assumed to be of\nthe form (4). As in the one-dimensional case, for most pricing applications it is typically su\ufb03cient\nto recover the functional form DTiTj(xTi) for 1\u2264i\u2264j\u2264n. In fact, it is only necessary to specify\nthe functional forms of the numeraire DTiTn+1(xTi) because the remaining functional forms may be\ndetermined using the martingale property of numeraire-rebased discount factors (as described in\nsubsection 3.2.2). Given the functional forms \u02dcLiTi(xTi) under the pre-model, the functional forms\nof the",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p3_c9",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 3,
+    "page_numbers": [
+      3
+    ],
+    "text": "tion 3.2.2). Given the functional forms \u02dcLiTi(xTi) under the pre-model, the functional forms\nof the numeraire DTiTn+1(xTi) under the Markov-functional model may be recovered as follows.\nWe proceed by observing that under the two-factor separable LIBOR market model, the terminal\nLIBOR can always be written explicitly in terms of un under F (since \u00b5n = 0):\nLnt =Ln0 exp\n(\nunt\u2212 12[un]t\n)\n. (10)\nUnder this model, ln LnTn has a Normal distribution under F with mean (ln Ln0\u2212 12[un]Tn) and\nvariance [un]Tn. Note that un is de\ufb01ned such that the variance [ un]Tn matches (~\u03c3n)2Tn, where ~\u03c3n\nis the terminal caplet volatility, so the model is indeed consistent with the Black formula for the\nprice of the terminal caplet. To calibrate the",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p3_c10",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 3,
+    "page_numbers": [
+      3
+    ],
+    "text": "is indeed consistent with the Black formula for the\nprice of the terminal caplet. To calibrate the Markov-functional model to the Black formula for\nthe price of the terminal caplet, the distribution of ln LnTn under F must be the same as under the\nmarket model. That is,\nLnTn(unTn) =Ln0 exp\n(\nunTn\u2212 12[un]Tn\n)\n.\nThe functional form of the numeraire at Tn may be recovered immediately since\nDTnTn+1(unTn) = (1 +\u03b1nLnTn(unTn))\u22121.\n3",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p4_c11",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 4,
+    "page_numbers": [
+      4
+    ],
+    "text": "The functional forms of the numeraire DTiTn+1(xTi) for 1 \u2264 i\u2264 n are found by working back\nrecursively from the terminal time Tn through each exercise date. At each exercise date Ti, once\nthe functional form of LiTi(xTi) is known it is straightforward to recover the functional form of the\nnumeraire (as in the one-dimensional case).\nIn these intermediate stages, the form of the pre-model will in\ufb02uence the functional forms of\neach LIBOR LiTi via the relationship LiTi = fi(\u02dcLiTi). The monotonic increasing functions fi are\nrecovered by calibrating to caplet prices. As in the one-dimensional case, calibrating to the prices\nof the vanilla caplets is equivalent to calibrating to the prices of digital caplets, so for convenience\nwe choose to do the",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p4_c12",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 4,
+    "page_numbers": [
+      4
+    ],
+    "text": "equivalent to calibrating to the prices of digital caplets, so for convenience\nwe choose to do the latter.\nTo \ufb01nd the functional formfi, in analogy with the one-dimensional case consider the numerically\nevaluated expectation\nJi0(x\u2217) :=D0Tn+1EF\n[\n\u02c6DTiTi+1(xTi)1{ \u02dcLiTi (xTi )>x\u2217}\n]\n. (11)\nThe functional form \u02c6DTiTi+1(xTi) in this expectation may be found from the values of one over the\nnumeraire at Ti+1, \u02c6DTi+1Ti+1(xTi+1) (which will have been determined at the previous iteration),\nby application of the martingale property (see subsection 3.2.2). Compare (11) with the value of a\ndigital caplet with strike K setting at Ti:\n\u02dcVi0 (K) = D0Tn+1EF\n[\n\u02c6DTiTi+11{LiTi>K}\n]\n= D0Tn+1EF\n[\n\u02c6DTiTi+11{f i( \u02dcLiTi )>K}\n]\n, (12)\nwhich may be determined from",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p4_c13",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 4,
+    "page_numbers": [
+      4
+    ],
+    "text": "[\n\u02c6DTiTi+11{LiTi>K}\n]\n= D0Tn+1EF\n[\n\u02c6DTiTi+11{f i( \u02dcLiTi )>K}\n]\n, (12)\nwhich may be determined from the market prices of caplets setting at Ti. If fi is monotonic then\nfi(x\u2217) = ( \u02dcVi0 )\u22121(Ji0(x\u2217)).\nThus we may obtain the functional form\nLiTi(xTi) =fi\n(\n\u02dcLiTi(xTi)).\nThe value of one over the numeraire, \u02c6DTiTi(xTi) = (DTiTn+1)\u22121(xTi), may now be recovered\nfrom LiTi(xTi) by observing that\n\u02c6DTiTi(xTi) = (1 +\u03b1iLiTi(xTi)) \u02c6DTiTi+1(xTi).\nIn the following, the prices of caplets are taken to be given by the Black formula in order to\nmatch the two-factor separable LIBOR market model described in section 2.2. In this case, the\nvalue of a digital caplet with strike K setting at Ti is given by\n\u02dcVi0 (K) =D0Tn+1\u03a6\n(ln(Li0/K))\n~\u03c3i\u221aTi \u2212 12~\u03c3i\u221aTi),\nwhere \u03a6",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p4_c14",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 4,
+    "page_numbers": [
+      4
+    ],
+    "text": "t with strike K setting at Ti is given by\n\u02dcVi0 (K) =D0Tn+1\u03a6\n(ln(Li0/K))\n~\u03c3i\u221aTi \u2212 12~\u03c3i\u221aTi),\nwhere \u03a6 denotes the standard cumulative Normal distribution function. Therefore,\nLiTi(xTi) =Li0 exp\n(\n\u221212(~\u03c3i)2Ti\u2212~\u03c3i\u221aTi\u03a6\u22121\n(\nJi0(\u02dcLiTi(xTi))\nD0Ti+1\n))\n.\n4",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p5_c15",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 5,
+    "page_numbers": [
+      5
+    ],
+    "text": "3.2 Simpli\ufb01ed implementation with restricted pre-model\nIn the special case where the pre-model \u02dcLiTi may be written as a monotonic increasing function of\nuiTi only, it is possible to simplify the general implementation methods described in Appendix B.\nThis relatively e\ufb03cient implementation is described using the example of the pre-model originally\nsuggested in (Hunt & Kennedy, 2004), although these methods apply whenever the pre-model is\nan increasing function of the form \u02dcLiTi(uiTi).\nUnder the simple pre-model,\n\u02dcLiTi = Li0 exp(\u00b5i +\u03bdi.xTi)\n= Li0 exp(\u00b5i +uiTi), (13)\nwhere\u00b5i assumed constant and\u03bdi andx are as de\ufb01ned above. Note that \u02dcLiTi is trivially a monotonic\nincreasing function of uiTi. If we assume that all LIBORs under this model have",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p5_c16",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 5,
+    "page_numbers": [
+      5
+    ],
+    "text": "ivially a monotonic\nincreasing function of uiTi. If we assume that all LIBORs under this model have zero drift under F,\nwe obtain a suitable value for \u00b5i (note this approximate model is clearly not arbitrage-free). Now,\nuiTi is Normally distributed under F with zero mean and variance [ui]Ti. Therefore,\nEF[\u02dcLiTi] = Li0 exp(\u00b5i)EF[exp(uiTi)]\n= Li0 exp(\u00b5i) exp\n(1\n2[ui]Ti\n)\n= Li0\nunder the assumption of zero drift, hence\n\u00b5i =\u221212[ui]Ti.\nC++ code: this pre-model is known as the \u201cquickApprox\u201d type described in LiborDriftAp-\nprox.cpp.\nThe following subsections describe in detail how a two-dimensional Markov-functional model\nbased on this particular pre-model may be constructed numerically on a grid.\n3.2.1 Numerical evaluation of value of Ji0",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p5_c17",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 5,
+    "page_numbers": [
+      5
+    ],
+    "text": "ular pre-model may be constructed numerically on a grid.\n3.2.1 Numerical evaluation of value of Ji0\nWorking back from the terminal time Tn recursively through each exercise date Ti, it is necessary\nto evaluate expectations of the form (11). Assume for the moment the functional form of \u02c6DTiTi+1\nhas already been determined. For the simple pre-model (13), equation (11) may be rewritten in\nthe form\nIi0(u\u2217) :=D0Tn+1EF\n[\n\u02c6DTiTi+1(uiTi,viTi)1{uiTi>u\u2217}\n]\n, (14)\nwhere u\u2217 = ln(x\u2217/Li0)\u2212\u00b5i. Recall from (6) that uiTi satis\ufb01es\nuiTi =\u03bd1ix1Ti +\u03bd2ix2Ti.\nSuppose we choose\nviTi :=x1Ti +\u03b3ix2Ti,\n5",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p6_c18",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 6,
+    "page_numbers": [
+      6
+    ],
+    "text": "such thatviTi anduiTi are independent. Now uiTi andviTi are both Normal and EF[uiTi] = EF[viTi] = 0,\nso for independence we must have\nEF[uiTiviTi] = EF[(\u03bd1ix1Ti +\u03bd2ix2Ti)(x1Ti +\u03b3ix2Ti)]\n= EF[\u03bd1i (x1Ti)2 + (\u03bd1i\u03b3i +\u03bd2i )x1Tix2Ti +\u03bd2i\u03b3i(x2Ti)2]\n= \u03bd1i var(x1Ti) + (\u03bd1i\u03b3i +\u03bd2i )cov(x1Ti,x 2Ti) +\u03bd2i\u03b3ivar(x2Ti)\n= \u03bd1i\u03be110,i + (\u03bd1i\u03b3i +\u03bd2i )\u03be120,i +\u03bd2i\u03b3i\u03be220,i\n= 0 ,\nhence\n\u03b3i =\u2212\n\u03bd1i\u03be110,i +\u03bd2i\u03be120,i\n\u03bd1i\u03be120,i +\u03bd2i\u03be220,i.\nThen\nIi0(u\u2217) =D0Tn+1EF[g(uiTi)1{uiTi>u\u2217}],\nwhere\ng(uiTi) = EF[ \u02c6DTiTi+1(uiTi,viTi)|uiTi]\n=\n\u222b \u221e\n\u2212\u221e\n\u02c6DTiTi+1(uiTi,v )\u03c6viTi(v)dv, (15)\nand \u03c6viTi(v) is the density of viTi, which is Normal with mean zero and variance\n[v]iTi =\u03be110,i + 2\u03b3i\u03be120,i + (\u03b3i)2\u03be220,i.\nThe integral (15) is of similar form to those integrals encountered in the",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p6_c19",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 6,
+    "page_numbers": [
+      6
+    ],
+    "text": "2\u03b3i\u03be120,i + (\u03b3i)2\u03be220,i.\nThe integral (15) is of similar form to those integrals encountered in the evaluation of Ji0(x\u2217) under\nthe one-dimensional Markov-functional model and the same methods may be applied. Once g has\nbeen computed on a grid of values of uiTi, the same integration methods may be used to compute\nIi0(u\u2217) =D0Tn+1\n\u222b \u221e\nu\u2217\ng(u)\u03c6uiTi(u)du,\nwhere \u03c6uiTi is the density of uiTi, which is Normal with mean zero and variance [ ui]Ti.\nC++ code: the whole evaluation process is described in the member functions \u201ccalcI0()\u201d and\n\u201cj0()\u201d of LMFGrid.cpp.\n3.2.2 Application of martingale property of numeraire-rebased discount factors\nThe evaluation of Ii0 described above (14) presupposes that \u02c6DTiTi+1(uiTi,viTi) is known on a grid of\nvalues of",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p6_c20",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 6,
+    "page_numbers": [
+      6
+    ],
+    "text": "on of Ii0 described above (14) presupposes that \u02c6DTiTi+1(uiTi,viTi) is known on a grid of\nvalues of uiTi,viTi. The values of \u02c6DTiTj for all 1\u2264i\u2264j\u2264n may be computed from the functional\nform of \u02c6DTjTj (once this has been evaluated), since \u02c6D.Tj is a martingale under F so\n\u02c6DTiTj = EF\n[\n\u02c6DTjTj|FTi\n]\n.\nTo compute the functional form of\n\u02c6DTiTj(uiTi,viTi) = EF\n[\n\u02c6DTjTj(ujTj,vjTj)|uiTi,viTi\n]\n,\n6",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p7_c21",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 7,
+    "page_numbers": [
+      7
+    ],
+    "text": "assume that the functional form of \u02c6DTjTj = 1/DTjTn+1 will have been determined over a grid of\nvalues ofujTj,vjTj at the previous iteration. For any given coordinates uiTi,viTi it is trivial to recover\nx1Ti,x 2Ti using\nx2Ti = uiTi\u2212\u03bd1iviTi\u03bd2i\u2212\u03bd1i\u03b3i , x 1Ti =viTi\u2212\u03b3ix2Ti.\nNow, the distribution of ujTj and vjTj given uiTi,viTi is a bivariate Normal distribution. The\ncovariance is given by\n\u02c6\u03c3ui,vi := cov\n(\nujTj,vjTj|x1Ti,x 2Ti\n)\n= cov\n(\n\u03bd1jx1Tj +\u03bd2jx2Tj,x 1Tj +\u03b3jx2Tj|x1Ti,x 2Ti\n)\n= \u03bd1j\u03be11i,j + (\u03bd1j\u03b3j +\u03bd2j )\u03be12i,j +\u03bd2j\u03b3j\u03be22i,j.\nTherefore, the correlation between ujTj and vjTj givenuiTi,viTi is given by\n\u02c6\u03c1ui,vi = \u02c6\u03c3ui,vi\n\u02c6\u03c3ui \u02c6\u03c3vi\n,\nwhere\n(\u02c6\u03c3ui)2 := var( ujTj|x1Ti,x 2Ti) = (\u03bd1j )2\u03be11i,j + 2\u03bd1j\u03bd2j\u03be12i,j + (\u03bd2j )2\u03be22i,j,\n(\u02c6\u03c3vi)2 := var( vjTj|x1Ti,x",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p7_c22",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 7,
+    "page_numbers": [
+      7
+    ],
+    "text": "var( ujTj|x1Ti,x 2Ti) = (\u03bd1j )2\u03be11i,j + 2\u03bd1j\u03bd2j\u03be12i,j + (\u03bd2j )2\u03be22i,j,\n(\u02c6\u03c3vi)2 := var( vjTj|x1Ti,x 2Ti) =\u03be11i,j + 2\u03b312i,j + (\u03b3j)2\u03be22i,j.\nThus the conditional distribution of vjTj givenujTj,uiTi,viTi is Normal with mean\nvjTi +\n(\n\u02c6\u03c1ui,vi\n\u02c6\u03c3vi\n\u02c6\u03c3ui\n)\n(ujTj\u2212ujTi),\nand variance\n(\u02c6\u03c3vi)2(1\u2212 (\u02c6\u03c1ui,vi)2).\nDenoting this density by \u02c6\u03c6vi, the usual integration methods may be used to compute\nh(ujTj) := EF\n[\n\u02c6DTjTj(ujTj,vjTj)|ujTj,uiTi,viTi\n]\n=\n\u222b \u221e\n\u2212\u221e\n\u02c6DTjTj(ujTj,v )\u02c6\u03c6vi(v)dv.\nThe density \u02c6\u03c6ui of ujTj given uiTi,viTi is also Normal with mean ujTi and variance (\u02c6\u03c3ui)2, hence the\nsame integration methods may be used to evaluate\n\u02c6DTiTj(ujTi,vjTi) =\n\u222b \u221e\n\u2212\u221e\nh(u)\u02c6\u03c6ui(u)du.\nAfter the functional forms of one over the numeraire, \u02c6DTiTi(uiTi,viTi), have been",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p7_c23",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 7,
+    "page_numbers": [
+      7
+    ],
+    "text": "\u221e\nh(u)\u02c6\u03c6ui(u)du.\nAfter the functional forms of one over the numeraire, \u02c6DTiTi(uiTi,viTi), have been recovered for\nall exercise dates Ti, it will usually be necessary to compute \u02c6DTiTj(uiTi,viTi) for all 1 \u2264 i < j\u2264 n\nto compute the speci\ufb01cation of the model. However, as in the one-factor case, this is typically all\nthat is required in practice.\nC++ code: the application of martingale property of numeraire-rebased discount bonds is\ndescribed in \u201cpopulateTerminalSlice()\u201d and \u201cpopulateIntermediateSlice()\u201d of LMFGrid.cpp.\n7",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p8_c24",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 8,
+    "page_numbers": [
+      8
+    ],
+    "text": "3.2.3 Computation of intermediate functional forms\nTo \ufb01nd the functional formfi, in analogy with the one-dimensional case we compare the numerically\nevaluated expectation (11) and (12). Comparing the form of these equations, it follows that as fi\nis a monotonic increasing function (by assumption),\nfi(x\u2217) =( \u02dcVi0)\u22121 (Ji0(x\u2217)).\nTherefore, setting x\u2217 = \u02dcLiTi(uiTi) for a given value of uiTi,\nLiTi(uiTi) = fi\n(\n\u02dcLiTi(uiTi))\n= fi(Li0 exp(\u00b5i +uiTi))\n=\n(\n\u02dcVi0\n)\u22121\n(Ji0(Li0 exp(\u00b5i +uiTi)))\n=\n(\n\u02dcVi0\n)\u22121\n(Ii0(uiTi)) (16)\n= Li0 exp\n(\n\u221212(~\u03c3i)2Ti\u2212~\u03c3i\u221aTi\u03a6\u22121\n(\nIi0(uiTi)\nD0Ti+1\n))\n, (17)\nwhere \u03a6 is the standard Normal cumulative density function, assuming digital caplet prices are\ngiven by the Black formula with implied volatility ~\u03c3i. Note that for this",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p8_c25",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 8,
+    "page_numbers": [
+      8
+    ],
+    "text": "igital caplet prices are\ngiven by the Black formula with implied volatility ~\u03c3i. Note that for this particular pre-model, it is\nclear that LiTi is independent of viTi.\nC++ code: the computation of intermediate functional forms is described in \u201cpopulateInter-\nmediateSlice()\u201d of LMFGrid.cpp.\n3.3 Speci\ufb01cation of the instantaneous volatility structure\nThe speci\ufb01cation of the instantaneous volatility structure used in this model is motivated by a\n\u201cprincipal components analysis\u201d type representation of movements in the term structure. Con-\nsider the SDE describing the separable two-factor LIBOR market model (1). A suitable generic\nspeci\ufb01cation of a separable volatility structure is given by the following:\nduit =\u03c3t\n2\u2211\nj=1\nfj(Ti\u2212t)dWjt, (18)\nwhere",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p8_c26",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 8,
+    "page_numbers": [
+      8
+    ],
+    "text": "separable volatility structure is given by the following:\nduit =\u03c3t\n2\u2211\nj=1\nfj(Ti\u2212t)dWjt, (18)\nwhere \u03c3t is a deterministic function and d W 1t dW 2t = \u03c1dt for some constant \u03c1. If fj(t) := cje\u2212\u03b7jt\nfor some constants cj and \u03b7j, then the volatility structure will be of the desired separable form.\nThat is,\nduit =\u03bdi.dxt,\nwhere\n\u03bdi = (c1e\u2212\u03b71Ti,c 2e\u2212\u03b72Ti),\nand\ndxt = (e\u03b71t\u03c3tdW 1t,e\u03b72t\u03c3tdW 2t )T.\nIf \u03c3t is a piecewise constant function this enables calibration to the relevant caplet prices, as\ndescribed in section 3.3.3.\n8",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p9_c27",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 9,
+    "page_numbers": [
+      9
+    ],
+    "text": "The speci\ufb01c parametrization described in the remainder of this section is of this form and is\ndesigned to capture the \ufb01rst two principal component of the movements in the forward curve over\ntime.\nC++ code: the speci\ufb01cation of the instantaneous volatility structure is described as the \u201ccor-\nrelationStructure\u201d in LiborDriftApprox.cpp. The PCA-type parametrization described below is\nimplemented as the \u201cmeanReversion\u201d type in LiborDriftApprox.cpp. The other type known as\n\u201cmeanReversionSpecifyingRho\u201d is not mentioned in this document. This type \ufb01xes the instanta-\nneous correlation of the two driving Brownian motions.\n3.3.1 PCA-type parametrization\nSuppose\nduit =\u03c3t\n2\u2211\nj=1\nAjgj(Ti\u2212t)dZjt,\nwhere (Z1,Z 2) is a standard two-dimensional Brownian",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p9_c28",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 9,
+    "page_numbers": [
+      9
+    ],
+    "text": "ation\nSuppose\nduit =\u03c3t\n2\u2211\nj=1\nAjgj(Ti\u2212t)dZjt,\nwhere (Z1,Z 2) is a standard two-dimensional Brownian motion, for some constants A1,A 2\u2208 [0, 1]\nsuch that\n|A1| +|A2| = 1.\nConsider the following parametrization of g1,g 2:\ng1(t) := B1e\u2212\u03b71t\ng2(t) := B2e\u2212\u03b72t\u2212B3e\u2212\u03b71t.\nHere, g1 re\ufb02ects a \u201cparallel\u201d shift of the forward curve if \u03b71 > 0 is small, in which case g2 re\ufb02ects\nthe tilt of the forward curve (where \u03b72 is between 20% and 40%, say). When A1 is close to 1,\nthis two-dimensional model is e\ufb00ectively a one-factor model. For suitable values of the constants\n\u03b71,\u03b7 2 > 0, the values of B1,B 2,B 3 may be chosen such that g1,g 2 are orthonormal over the tenor\nstructure under consideration, that is\n\u222b Tn+1\n0\ngi(u)gj(u)du =\u03b4ij, (19)\nfor i,j = 1, 2 (as",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p9_c29",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 9,
+    "page_numbers": [
+      9
+    ],
+    "text": "he tenor\nstructure under consideration, that is\n\u222b Tn+1\n0\ngi(u)gj(u)du =\u03b4ij, (19)\nfor i,j = 1, 2 (as described in section 3.3.2).\nTo see this representation is of the separable form (18), observe that\n\u03c3i(t).dWt =\u03c3t[e\u2212\u03b71(Ti\u2212t)(A1B1dZ1t\u2212A2B3dZ2t ) +e\u2212\u03b72(Ti\u2212t)A2B2dZ2t ].\nSetting\nK1dW 1t = A1B1dZ1t\u2212A2B3dZ2t\nK2dW 2t = A2B2dZ2t.\nIt is clear that\nK1 =\n\u221a\n(A1B1)2 + (A2B3)2,\nK2 = A2B2,\n9",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p10_c30",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 10,
+    "page_numbers": [
+      10
+    ],
+    "text": "and also\n\u03c1 = dW 1t dW 2t =\u2212\u2212A22B2B3K1K2 =\u2212A2B3K1 ,\n(thus the correlation is \ufb01xed given the other parameters). Therefore,\nduit =\u03c3t(K1e\u2212\u03b71(Ti\u2212t)dW 1t +K2e\u2212\u03b72(Ti\u2212t)dW 2t ). (20)\n3.3.2 Computation of constants to ensure orthonormal basis\nTo computeB1,B 2,B 3 to satisfy (19), for convenience de\ufb01ne\nP1 := 1 \u2212e\u22122\u03b71Tn+1\nP2 := 1 \u2212e\u22122\u03b72Tn+1\nP12 := 1 \u2212e\u2212(\u03b71+\u03b72)Tn+1.\nThese quantities are all positive for \u03b7j > 0. By evaluating (19) for i =j = 1,\n(1\u2212e\u22122\u03b71Tn+1\n2\u03b71\n)\nB21 = 1,\nthus\nB1 =\n\u221a\n2\u03b71\nP1\n.\nFori = 1 and j = 2, (19) gives\nB1B2P12\n\u03b71 +\u03b72\n\u2212 B1B3P1\n2\u03b71\n= 0,\nhence\nB3 = 2\u03b71P12(\u03b71 +\u03b72)P1B2. (21)\nFinally, fori =j = 2,\nB22P2\n2\u03b72\n\u2212 2B2B3P12\n\u03b71 +\u03b72\n+ B23P1\n2\u03b71\n= 1,\nand substituting B3 using (21) yields\nB22 =\n(P2\n2\u03b72\n\u2212 2\u03b71P 212\n(\u03b71 +\u03b72)2P1\n)\u22121\n.\nTherefore the",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p10_c31",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 10,
+    "page_numbers": [
+      10
+    ],
+    "text": "= 1,\nand substituting B3 using (21) yields\nB22 =\n(P2\n2\u03b72\n\u2212 2\u03b71P 212\n(\u03b71 +\u03b72)2P1\n)\u22121\n.\nTherefore the model is well de\ufb01ned if the bracket on the right hand side is strictly positive, in which\ncase B2> 0 is immediate and from (21) so is B3> 0 (clearly B1> 0).\n10",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p11_c32",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 11,
+    "page_numbers": [
+      11
+    ],
+    "text": "3.3.3 Calibration to caplet prices\nWe choose to specify the instantaneous volatility of the two-factor separable LIBOR market model\nsuch that vanilla caplets are priced correctly under our model (we shall assume these are given by\nthe Black formula). This is achieved by allowing \u03c3t to be piecewise constant.\nTo begin, observe that (20) is of separable form (6) with\n\u03bd1j = K1e\u2212\u03b71Tj\n\u03bd2j = K2e\u2212\u03b72Tj,\nfor j = 1,...,n . De\ufb01ne\n\u03c811j :=\n\u222b Tj\nTj\u22121\ne2\u03b71udu = 12\u03b71 (e2\u03b71Tj\u2212e2\u03b71Tj\u22121)\n\u03c812j :=\n\u222b Tj\nTj\u22121\n\u03c1e(\u03b71+\u03b72)udu = \u03c1\u03b71 +\u03b72 (e(\u03b71+\u03b72)Tj\u2212e(\u03b71+\u03b72)Tj\u22121)\n\u03c822j :=\n\u222b Tj\nTj\u22121\ne2\u03b72udu = 12\u03b72 (e2\u03b72Tj\u2212e2\u03b72Tj\u22121).\nand suppose that for j = 1,...,n\n\u03c3t :=\u03b6j,\non each interval (Tj\u22121,Tj], for some constants \u03b6j. As our volatility speci\ufb01cation (20) is separable,\nthe quadratic",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p11_c33",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 11,
+    "page_numbers": [
+      11
+    ],
+    "text": "l (Tj\u22121,Tj], for some constants \u03b6j. As our volatility speci\ufb01cation (20) is separable,\nthe quadratic variation of ui at Ti may be written in the form (9)\n[ui]Ti = (\u03bd1i )2\u03be110,i + 2\u03bd1i\u03bd2i\u03be120,i + (\u03bd2i )2\u03be220,i, (22)\nwhere\n\u03be110,i =\ni\u2211\nj=1\n\u03b6 2j\u03c811j\n\u03be120,i =\ni\u2211\nj=1\n\u03b6 2j\u03c812j\n\u03be220,i =\ni\u2211\nj=1\n\u03b6 2j\u03c822j .\nThe constants\u03b6i may be determined iteratively fori = 1,...,n by ensuring that [ui]Ti = (~\u03c3i)2Ti\nto match the i th caplet implied volatility ~\u03c3i. For i = 1, it is clear from (22) that\n\u03b61 =\n\u221a\n(~\u03c31)2T1\n(\u03bd11)2\u03c8111 + 2\u03bd11\u03bd21\u03c8121 + (\u03bd21)2\u03c8221 .\nFor a given i >1, suppose the constants \u03b6j have already been determined for all 1 \u2264j\u2264i\u2212 1 to\nbe consistent with the \ufb01rst ( i\u2212 1)th caplet implied volatilities. Then \u03be110,i\u22121,\u03be 120,i\u22121 and \u03be220,i\u22121 may\nbe computed,",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p11_c34",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 11,
+    "page_numbers": [
+      11
+    ],
+    "text": "e \ufb01rst ( i\u2212 1)th caplet implied volatilities. Then \u03be110,i\u22121,\u03be 120,i\u22121 and \u03be220,i\u22121 may\nbe computed, and by rearranging (22),\n\u03b6i =\n\u221a\n(~\u03c3i)2Ti\u2212 ((\u03bd1i )2\u03be110,i\u22121 + 2\u03bd1i\u03bd2i\u03be120,i\u22121 + (\u03bd2i )2\u03be220,i\u22121)\n(\u03bd1i )2\u03c811i + 2\u03bd1i\u03bd2i\u03c812i + (\u03bd2i )2\u03c822i .\n11",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p12_c35",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 12,
+    "page_numbers": [
+      12
+    ],
+    "text": "Acknowledgement: I would like to thank Michael Bennett for his original work on the two-factor\nLIBOR Markov-functional model. A major part of this document is based on Mike\u2019s PhD thesis\nat the University of Warwick.\nReferences\nBrace, A., Gatarek, D., & Musiela, M. (1997). The market model of interest rate dynamics.\nMathematical Finance, 7(2), 127-155.\nHunt, P. J., & Kennedy, J. E. (2004). Financial derivatives in theory and practice . Revised edition,\nWiley.\nPietersz, R., Pelsser, A., & Regenmortel, M. (2004). Fast drift approximated pricing in the bgm\nmodel. Journal of Computational Finance , 8(1), 93-124.\nA Brownian Bridge pre-model\nIn this appendix, we describe the Brownian bridge drift approximation (Pietersz, Pelsser, & Re-\ngenmortel,",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p12_c36",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 12,
+    "page_numbers": [
+      12
+    ],
+    "text": "appendix, we describe the Brownian bridge drift approximation (Pietersz, Pelsser, & Re-\ngenmortel, 2004) that may be used to construct a tractable two-dimensional \u201cdrift approximation\u201d\nmodel that has similar behaviour to the two-factor separable LIBOR market model described in\nsection 2.2. This is a simple extension to the one-factor case. Note that this approximation can\nthen be used as a pre-model for the two-factor LIBOR Markov-functional model. As in the one-\nfactor case, (Pietersz et al., 2004) show that the approximated LIBORs can be written in terms of\na two-dimensional driving Markov process if the market model has a separable volatility structure.\nThis is the case we consider here.\nTo begin, a method based on a Brownian bridge may",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p12_c37",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 12,
+    "page_numbers": [
+      12
+    ],
+    "text": "ity structure.\nThis is the case we consider here.\nTo begin, a method based on a Brownian bridge may be used to approximate the drift of each\nof the still-alive LIBORs from time zero to a given exercise date Tk. As the drift of the n th LIBOR\nis zero, LnTk is immediate given the value of unTk. Working back recursively from the n th LIBOR\ndown to the \ufb01rst, suppose that for a given i<n we already have approximations for Li+1Tk ,...,L nTk\nand we wish to estimate LiTk. Rewriting equation (7) using (2),\nLiTk =Li0 exp\n(\nHiTk\u2212 12[ui]Tk +uiTk\n)\n, (23)\nwhere\nHiTk :=\u2212\n\u222b Tk\n0\nn\u2211\nj=i+1\n\u03b1jLjs\n1 +\u03b1jLjssijs ds, (24)\nand sijs is given by (3). It is clear that LiTk may be estimated given the value of uiTk if we have an\napproximation for HiTk. If each LjTk(j",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p12_c38",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 12,
+    "page_numbers": [
+      12
+    ],
+    "text": "LiTk may be estimated given the value of uiTk if we have an\napproximation for HiTk. If each LjTk(j > i) has already been estimated, then the value of Ljs foranys\u2208 (0,Tk) may be approximated by the mean at time s of the generalized geometric Brownian\nbridge that joins Lj0 and LjTk. This is given by\nmj(s) =Lj0\n(\nLjTk\nLj0\n) [uj ]s\n[uj ]Tk\nexp\n{( [uj]s\n2[uj]Tk\n)\n([uj]Tk\u2212 [uj]s)\n}\n. (25)\n12",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p13_c39",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 13,
+    "page_numbers": [
+      13
+    ],
+    "text": "See Appendix A of (Pietersz et al., 2004) for details. The approximation for HiTk is computed by\nsubstituting this approximation for all terms Ljs(j > i) appearing in the integrand of (24) and\nevaluating the integral numerically.\nIt is clear that any LIBOR LiTk may be written in terms of the two-dimensional Markov process\nxTk since it is a function of HiTk and uiTk, and HiTk is in turn a function of all LIBORs LjTk(j >i),\nthat is, it is a function of ujTk, (j > i). As in the one-dimensional case, the application of driftapproximations to a two-factor separable LIBOR market model leads to e\ufb03cient implementation,\nthough of course the use of approximations introduces arbitrage.\nB Implementation using a general pre-model\nWhen the pre-model",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p13_c40",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 13,
+    "page_numbers": [
+      13
+    ],
+    "text": "approximations introduces arbitrage.\nB Implementation using a general pre-model\nWhen the pre-model \u02dcLiTi cannot be written as a function of uiTi, the numerical evaluation of Ji0(x\u2217)\n(11) is more involved since it is no longer straightforward to rewrite the two-dimensional integral\nsuch that the integration region is rectangular (recall the integration region corresponds to the area\nwhere \u02dcLiTi(uiTi,viTi)>x\u2217). One possible solution is to \ufb01x viTi and integrate over uiTi \ufb01rst, in which\ncase the second integral over viTi will be against a smooth function.\nExplicitly, it is possible to evaluate\nJi0(x\u2217) =D0Tn+1EF\n[\nEF\n[\n\u02c6DTiTi+1(uiTi,viTi)1{ \u02dcLiTi (uiTi,viTi )>x\u2217}|viTi\n]]\n, (26)\nas follows. In evaluating the inner expectation for each viTi,",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p13_c41",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 13,
+    "page_numbers": [
+      13
+    ],
+    "text": "LiTi (uiTi,viTi )>x\u2217}|viTi\n]]\n, (26)\nas follows. In evaluating the inner expectation for each viTi, write\n1{ \u02dcLiTi (uiTi,viTi )>x\u2217} = 1{uiTi>u\u2217},\nwhere u\u2217 =u\u2217(x\u2217,viTi) solves \u02dcLiTi(uiTi,viTi) =x\u2217,\nfor this particular value of viTi. In solving for u\u2217, \u02dcLiTi(uiTi,viTi) may be approximated (for \ufb01xed viTi)\nas a polynomial in uiTi and a standard root-\ufb01nding algorithm may be applied.\nThe inner expectation of (26) is given by\n\u02dcg(viTi) = EF\n[\n\u02c6DTiTi+1(uiTi,viTi)1{ \u02dcLiTi (uiTi,viTi )>x\u2217}|viTi\n]\n= EF\n[\n\u02c6DTiTi+1(uiTi,viTi)1{uiTi>u\u2217(x\u2217,viTi )}|viTi\n]\n=\n\u222b \u221e\nu\u2217(x\u2217,viTi )\n\u02c6DTiTi+1(u,viTi)\u03c6uiTi(u)du,\nwhere as before \u03c6uiTi is the density of uiTi. In practice, \u02dcg will be a smooth function of viTi and it istherefore straightforward to evaluate\nJi0(x\u2217) =",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p13_c42",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 13,
+    "page_numbers": [
+      13
+    ],
+    "text": "tice, \u02dcg will be a smooth function of viTi and it istherefore straightforward to evaluate\nJi0(x\u2217) = D0Tn+1EF[\u02dcg(viTi)]\n= D0Tn+1\n\u222b \u221e\n\u2212\u221e\n\u02dcg(v)\u03c6viTi(v)dv.\nTo improve the e\ufb03ciency of the implementation, notice that it is only necessary to evaluate Ji0 on\na grid of values of x\u2217, since Ji0 may be approximated at other points using a suitable interpolation\n(notice that Ji0(.) will be a smooth function, assuming the pre-model \u02dcLiTi(uiTi,viTi) is also smooth).\n13",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p14_c43",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 14,
+    "page_numbers": [
+      14
+    ],
+    "text": "C Other C++ \ufb01les and their descriptions\nIn this appendix, we give a brief description of the main C++ \ufb01les involved in the model.\n\u2022 ImpliedVol: this class implements the implied volatility input for the model. We can set the\ncaplet implied volatilities to be \ufb02at, increasing, decreasing in expiry or the actual market\ndata.\n\u2022 BermudanSwaption: this class implements the Bermudan swaption product which can be\npriced by the LIBOR Markov-functional model (with di\ufb00erent pre-models), LIBOR Market\nmodel (full simulation or Brownian Bridge drift approximation).\n\u2022 Interpolator: this class implements the interpolation of grid points to calculate the functional\nforms. There are two types of interpolation methods described here: Lagrange polynomial\nand",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  },
+  {
+    "chunk_id": "v1_doc.pdf_p14_c44",
+    "document": "v1_doc.pdf",
+    "file_name": "v1_doc.pdf",
+    "page": 14,
+    "page_numbers": [
+      14
+    ],
+    "text": "ctional\nforms. There are two types of interpolation methods described here: Lagrange polynomial\nand cubic spline. It is recommended to use cubic spline as it gives better accuracy.\n\u2022 NormalExpectation: this class implements the calculation of all di\ufb00erent (conditional) expec-\ntations in this document.\n\u2022 Schedule: this class implements the set up of the tenor structure for the construction of yield\ncurve, implied volatilities, and Bermudan swaptions as well as the models.\n\u2022 SimpsonIntegral: this class implements the calculation of deterministic integrals by the Simp-\nson method (e.g. the (co)variances of the two components of the driving process at di\ufb00erent\nexercise dates).\n14",
+    "section_title": null,
+    "report_periods": [
+      "2005",
+      "2004"
+    ],
+    "entities": [],
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "doc_type": "general_document"
+  }
+]

@@ -1,0 +1,463 @@
+{
+  "per_question": [
+    {
+      "id": "B32",
+      "question": "What individual stress capital buffer did the Fed assign to each US GSIB for the 2025-26 cycle, according to these capital proposals?",
+      "gold_claims": 1,
+      "gold_chunks": 0,
+      "gold_document_pages": 0,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": "13"
+        },
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": "2"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": null,
+      "answer_recall_previous_evaluation": 1.0
+    },
+    {
+      "id": "C31",
+      "question": "How many Monte Carlo paths did the rough Bergomi pricing routine use to generate prices in the Chebyshev-tensor calibration study?",
+      "gold_claims": 2,
+      "gold_chunks": 1,
+      "gold_document_pages": 1,
+      "retrieval_budget": 4,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "2012.07440v3.pdf",
+          "page": "15"
+        },
+        {
+          "document": "2012.07440v3.pdf",
+          "page": "2"
+        }
+      ],
+      "gold_pages_hit": 1,
+      "gold_page_recall": 1.0,
+      "answer_recall_previous_evaluation": 1.0
+    },
+    {
+      "id": "A35",
+      "question": "Who chairs the Risk Management Committee of Infosys?",
+      "gold_claims": 3,
+      "gold_chunks": 2,
+      "gold_document_pages": 2,
+      "retrieval_budget": 3,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": "108"
+        }
+      ],
+      "gold_pages_hit": 1,
+      "gold_page_recall": 0.5,
+      "answer_recall_previous_evaluation": 0.6666666666666666
+    },
+    {
+      "id": "A34",
+      "question": "What was Banque Saudi Fransi's NPL coverage ratio at the end of 2025?",
+      "gold_claims": 6,
+      "gold_chunks": 1,
+      "gold_document_pages": 1,
+      "retrieval_budget": 3,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": "317"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": "51"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.3333333333333333
+    },
+    {
+      "id": "A33",
+      "question": "Which rating agency rates Refex Industries' bank facilities, and what long-term rating did it reaffirm?",
+      "gold_claims": 9,
+      "gold_chunks": 2,
+      "gold_document_pages": 2,
+      "retrieval_budget": 6,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": "121"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": "76"
+        }
+      ],
+      "gold_pages_hit": 2,
+      "gold_page_recall": 1.0,
+      "answer_recall_previous_evaluation": 0.2222222222222222
+    },
+    {
+      "id": "C12",
+      "question": "How does moving to lifetime loss reserving feed through to a bank's regulatory capital - at adoption and on an ongoing basis - and what relief or limits apply to counting loss reserves as capital?",
+      "gold_claims": 35,
+      "gold_chunks": 25,
+      "gold_document_pages": 15,
+      "retrieval_budget": 6,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "BaselFramework.pdf",
+          "page": "179"
+        },
+        {
+          "document": "BaselFramework.pdf",
+          "page": "340"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "A23",
+      "question": "Infosys returned more cash to shareholders this year than it generated. Does that weaken its credit standing in any meaningful way? Look at liquidity, policy commitments and any one-off items.",
+      "gold_claims": 61,
+      "gold_chunks": 10,
+      "gold_document_pages": 10,
+      "retrieval_budget": 6,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "BaselFramework.pdf",
+          "page": "519"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": "36"
+        }
+      ],
+      "gold_pages_hit": 1,
+      "gold_page_recall": 0.1,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "C29",
+      "question": "Why would a rates desk choose a Markov-functional model over a short-rate model or a full LIBOR market model for callable products, how does it differ conceptually from tree or local-volatility style constructions, and what limits its dimensionality?",
+      "gold_claims": 48,
+      "gold_chunks": 55,
+      "gold_document_pages": 29,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "comparisonpaper.pdf",
+          "page": "4"
+        },
+        {
+          "document": "comparisonpaper.pdf",
+          "page": "7"
+        }
+      ],
+      "gold_pages_hit": 2,
+      "gold_page_recall": 0.06896551724137931,
+      "answer_recall_previous_evaluation": 0.20833333333333334
+    },
+    {
+      "id": "A10",
+      "question": "Refex has been reshaping its business portfolio. What has it exited, what is it leaning into, and how does the shift change the risk profile of its revenue and receivables?",
+      "gold_claims": 69,
+      "gold_chunks": 9,
+      "gold_document_pages": 9,
+      "retrieval_budget": 6,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": "5"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": "2"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "B07",
+      "question": "Our trading desks use internal models today. Explain how Basel's revised market risk framework decides which desks may keep using models and how it combines modelled and non-modelled desks into a single charge, then contrast this with the 2026 US proposal, including how default risk is captured, which model-quality tests apply, and any transitional relief.",
+      "gold_claims": 112,
+      "gold_chunks": 138,
+      "gold_document_pages": 38,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 6,
+      "retrieved_document_pages": [
+        {
+          "document": "91fr14952.pdf",
+          "page": "126"
+        },
+        {
+          "document": "BCBS-MarketRisk.pdf",
+          "page": "72"
+        },
+        {
+          "document": "BCBS-MarketRisk.pdf",
+          "page": "73"
+        }
+      ],
+      "gold_pages_hit": 1,
+      "gold_page_recall": 0.02631578947368421,
+      "answer_recall_previous_evaluation": 0.08928571428571429
+    },
+    {
+      "id": "C20",
+      "question": "In cross-currency Markov-functional models the drift of the FX driver cannot be chosen freely. Explain why, how each of the two designs in the corpus determines it, and what that implies for arbitrage-freeness, correlation assumptions and calibration risk on skew-sensitive hybrids.",
+      "gold_claims": 0,
+      "gold_chunks": 120,
+      "gold_document_pages": 43,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "Markov_Functional_CCY_Model.pdf",
+          "page": "2"
+        },
+        {
+          "document": "crosscurrencymfm.pdf",
+          "page": "12"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "A03",
+      "question": "How much can we rely on Gammon India's board, management and internal controls right now? Compare what the directors claim with what the statutory and secretarial auditors actually found on compliance and oversight.",
+      "gold_claims": 106,
+      "gold_chunks": 246,
+      "gold_document_pages": 73,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": "102"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": "126"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.009433962264150943
+    },
+    {
+      "id": "A25",
+      "question": "Across the Indian industrial companies in this set, whose receivables look most likely to turn into credit losses? Compare collection trends, ageing, concentration and how much each has actually provided.",
+      "gold_claims": 13,
+      "gold_chunks": 147,
+      "gold_document_pages": 74,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "BaselFramework.pdf",
+          "page": "1929"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": "18"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "C04",
+      "question": "Our credit metrics have improved for three years, yet economists expect a downturn and we recently loosened underwriting on one product. How should management adjustments layered on the modelled allowance be designed, sized and documented so they neither miss these risks nor double count them, and what would make an examiner push back?",
+      "gold_claims": 109,
+      "gold_chunks": 84,
+      "gold_document_pages": 61,
+      "retrieval_budget": 6,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "91fr14952.pdf",
+          "page": "200"
+        },
+        {
+          "document": "OCC ACL Handbook.pdf",
+          "page": "36"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.06422018348623854
+    },
+    {
+      "id": "A08",
+      "question": "Run a credit red-flag review on Refex Industries for this year. Which events, disclosures and balance-sheet features should worry a lender, and how do they net out against the rating it holds?",
+      "gold_claims": 112,
+      "gold_chunks": 15,
+      "gold_document_pages": 15,
+      "retrieval_budget": 6,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "BaselFramework.pdf",
+          "page": "1394"
+        },
+        {
+          "document": "BaselFramework.pdf",
+          "page": "1395"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "C08",
+      "question": "How has the treatment of loan modifications for struggling borrowers changed in the US allowance framework over the past few years - comparing the early implementation guidance and the 2021 examiner handbook with the 2023 revised supervisory statement and current accounting guidance - and what does it mean for how a bank sets loan lives, measures losses and discloses modified loans?",
+      "gold_claims": 0,
+      "gold_chunks": 91,
+      "gold_document_pages": 55,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 5,
+      "retrieved_document_pages": [
+        {
+          "document": "OCC ACL Handbook.pdf",
+          "page": "11"
+        },
+        {
+          "document": "OCC ACL Handbook.pdf",
+          "page": "5"
+        },
+        {
+          "document": "OCC ACL Handbook.pdf",
+          "page": "6"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "A12",
+      "question": "Is Banque Saudi Fransi's loan book getting riskier even though its impairment charge fell? Walk through the growth mix, problem loans, coverage and provisioning.",
+      "gold_claims": 74,
+      "gold_chunks": 10,
+      "gold_document_pages": 10,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": "198"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": "205"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "B11",
+      "question": "Mortgage servicing rights have long been penalised in bank capital. Explain how Basel's global rules limit their recognition, how current US rules differ by bank size, what the 2026 US proposals would change and why, including the policy concern about where mortgage activity has migrated.",
+      "gold_claims": 54,
+      "gold_chunks": 36,
+      "gold_document_pages": 20,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "BaselFramework.pdf",
+          "page": "164"
+        },
+        {
+          "document": "BaselFramework.pdf",
+          "page": "165"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.037037037037037035
+    },
+    {
+      "id": "C02",
+      "question": "If our bank were building its first lifetime-loss allowance process from scratch, what are the main building blocks we must decide, in what order, and at each step what evidence would a federal examiner expect to see before accepting the final number?",
+      "gold_claims": 119,
+      "gold_chunks": 187,
+      "gold_document_pages": 125,
+      "retrieval_budget": 9,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": "55"
+        },
+        {
+          "document": "RiskMetrics_-_Technical_Document.pdf",
+          "page": "30"
+        }
+      ],
+      "gold_pages_hit": 0,
+      "gold_page_recall": 0.0,
+      "answer_recall_previous_evaluation": 0.0
+    },
+    {
+      "id": "C01",
+      "question": "We are a mid-sized lender that has only ever reserved for loan losses once they looked probable. Under the US lifetime expected-loss standard, what actually changes for us - in the timing of provisions, the information we must use, our equity and regulatory capital, and the data we need to keep - and why did standard-setters decide the old approach was inadequate?",
+      "gold_claims": 74,
+      "gold_chunks": 112,
+      "gold_document_pages": 86,
+      "retrieval_budget": 6,
+      "retrieved_chunks": 2,
+      "retrieved_document_pages": [
+        {
+          "document": "ASU_2016-13.pdf",
+          "page": "259"
+        },
+        {
+          "document": "Implementation Handbook.pdf",
+          "page": "160"
+        }
+      ],
+      "gold_pages_hit": 1,
+      "gold_page_recall": 0.011627906976744186,
+      "answer_recall_previous_evaluation": 0.013513513513513514
+    }
+  ],
+  "summary": {
+    "questions_audited": 20,
+    "questions_with_gold_pages": 19,
+    "average_gold_page_recall": 0.14246890598377934,
+    "median_gold_document_pages": 17.5,
+    "questions_with_gold_pages_above_budget": 15,
+    "global_evidence_cap": 12,
+    "document_candidate_limit": 4
+  },
+  "method": {
+    "gold_page_match": "Exact (benchmark document, page) pair intersection; no LLM judge.",
+    "answer_recall_note": "Carried forward from evaluation_results_sample20.json. The deployed training_full_corpus collection is reindexed and matches the 31,994-chunk segmentation measured in the evaluation run.",
+    "collection": "training_full_corpus",
+    "benchmark": "data\\Train\\Benchmarks\\benchmark_100.jsonl"
+  }
+}

@@ -1,0 +1,572 @@
+[
+  {
+    "filename": "crosscurrencymfm.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [],
+    "scope": "India",
+    "num_pages": 12,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Heston.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [],
+    "scope": "India",
+    "num_pages": 17,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Markov_Functional_CCY_Model.pdf",
+    "title": null,
+    "entities": [
+      "Dresdner Bank"
+    ],
+    "document_type": "general_document",
+    "periods": [
+      "2004",
+      "2002"
+    ],
+    "scope": "India",
+    "num_pages": 23,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "2f_lmf.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "num_pages": 14,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "comparisonpaper.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [
+      "2005",
+      "2004",
+      "2001",
+      "2002"
+    ],
+    "scope": "India",
+    "num_pages": 62,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "RiskMetrics_-_Technical_Document.pdf",
+    "title": null,
+    "entities": [
+      "Reuters Ltd"
+    ],
+    "document_type": "regulatory_statement",
+    "periods": [],
+    "scope": "India",
+    "num_pages": 296,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "2012.07440v3.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [
+      "2012",
+      "2020"
+    ],
+    "scope": null,
+    "num_pages": 24,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "infosys-ar-26.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "integrated_annual_report",
+    "periods": [
+      "2025-26",
+      "2025-264"
+    ],
+    "scope": null,
+    "num_pages": 383,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "ASU_2016-13.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "accounting_standard",
+    "periods": [
+      "2016-13",
+      "2016"
+    ],
+    "scope": "United States",
+    "num_pages": 291,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "FASB ASC 326 Update.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "accounting_standard",
+    "periods": [
+      "2025-05",
+      "2025"
+    ],
+    "scope": "United States",
+    "num_pages": 38,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "FDIC FAQ.pdf",
+    "title": null,
+    "entities": [
+      "Federal Deposit Insurance Corporation"
+    ],
+    "document_type": "accounting_standard",
+    "periods": [
+      "2019",
+      "2019-10",
+      "2022",
+      "2016-13",
+      "2016"
+    ],
+    "scope": "United States",
+    "num_pages": 43,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "FDIC Interagency CECL Statement.pdf",
+    "title": null,
+    "entities": [
+      "Insurance Corporation",
+      "Federal Deposit Insurance Corporation"
+    ],
+    "document_type": "accounting_standard",
+    "periods": [
+      "2023",
+      "2020",
+      "2022\u201302",
+      "2022",
+      "2016\u201313"
+    ],
+    "scope": "United States",
+    "num_pages": 10,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "OCC ACL Handbook.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "regulatory_statement",
+    "periods": [
+      "2021",
+      "2025"
+    ],
+    "scope": "United States",
+    "num_pages": 115,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Implementation Handbook.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "accounting_standard",
+    "periods": [
+      "2025",
+      "2025-05",
+      "2024"
+    ],
+    "scope": "United States",
+    "num_pages": 296,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "BaselFramework.pdf",
+    "title": null,
+    "entities": [
+      "Basel Committee"
+    ],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2026"
+    ],
+    "scope": "International / Basel",
+    "num_pages": 1982,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "BCBS-Basel-Endgame.pdf",
+    "title": null,
+    "entities": [
+      "Basel Committee"
+    ],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2017"
+    ],
+    "scope": "International / Basel",
+    "num_pages": 162,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "BCBS-CreditValuation.pdf",
+    "title": null,
+    "entities": [
+      "Basel Committee"
+    ],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2020",
+      "2023"
+    ],
+    "scope": "International / Basel",
+    "num_pages": 31,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "BCBS-MarketRisk.pdf",
+    "title": null,
+    "entities": [
+      "Basel Committee"
+    ],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2019"
+    ],
+    "scope": "International / Basel",
+    "num_pages": 136,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "aldar_annual_report_2024.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "annual_report",
+    "periods": [
+      "2024"
+    ],
+    "scope": "Middle East",
+    "num_pages": 317,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Inox Wind_Annual Report FY 2026.pdf",
+    "title": null,
+    "entities": [
+      "Inox Wind Limited",
+      "For Inox Wind Limited",
+      "BSE Limited",
+      "National Stock Exchange of India Limited"
+    ],
+    "document_type": "annual_report",
+    "periods": [
+      "FY 2026",
+      "2026",
+      "2025-26",
+      "2015",
+      "FY26"
+    ],
+    "scope": "India",
+    "num_pages": 366,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Integrated Annual Report 2025-26 Gammon India Limited.pdf",
+    "title": null,
+    "entities": [
+      "MUFG Intime India Private Limited",
+      "IDBI Bank",
+      "Canara Bank",
+      "Punjab National Bank",
+      "ICICI Bank"
+    ],
+    "document_type": "integrated_annual_report",
+    "periods": [
+      "2025-26",
+      "2025-2026",
+      "2025",
+      "2026",
+      "2013"
+    ],
+    "scope": "India",
+    "num_pages": 221,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "CEATIntegratedAnnualReport2526Re.pdf",
+    "title": null,
+    "entities": [
+      "Executive Committee",
+      "Independent Limited",
+      "India. In addition, BSI Group India Pvt. Ltd"
+    ],
+    "document_type": "integrated_annual_report",
+    "periods": [
+      "2025-26",
+      "FY 2025-26",
+      "2013",
+      "2015"
+    ],
+    "scope": "India",
+    "num_pages": 202,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Bhadora Industries_Annual Report.pdf",
+    "title": null,
+    "entities": [
+      "ICICI Bank",
+      "Intime India Private Limited"
+    ],
+    "document_type": "annual_report",
+    "periods": [
+      "2024",
+      "2025",
+      "2024-2025"
+    ],
+    "scope": "India",
+    "num_pages": 89,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "BSF-2025 Integrated Annual Report.pdf",
+    "title": null,
+    "entities": [
+      "Board Strategy and ESG Committee"
+    ],
+    "document_type": "integrated_annual_report",
+    "periods": [
+      "2025",
+      "2020-25"
+    ],
+    "scope": "Middle East",
+    "num_pages": 374,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "91fr14908.pdf",
+    "title": null,
+    "entities": [
+      "Global Systemically Important Bank",
+      "Systemically Important Bank",
+      "Large Bank",
+      "Basel Committee",
+      "The Basel Committee"
+    ],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2026",
+      "2001",
+      "2014",
+      "2015",
+      "2019"
+    ],
+    "scope": "United States",
+    "num_pages": 42,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "91fr14952.pdf",
+    "title": null,
+    "entities": [
+      "Insurance Corporation",
+      "Federal Deposit Insurance Corporation",
+      "A. Statutory Authority",
+      "The Basel Committee",
+      "Basel Committee"
+    ],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2026",
+      "2026\u20130265",
+      "2001",
+      "2014",
+      "2045"
+    ],
+    "scope": "United States",
+    "num_pages": 378,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "board-memo-basel-gsib-standardized-approach.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2026",
+      "2025"
+    ],
+    "scope": "United States",
+    "num_pages": 14,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "fact-sheet-SUMMARY.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [
+      "2026"
+    ],
+    "scope": "India",
+    "num_pages": 4,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "gsib-memo-change-summary.pdf",
+    "title": null,
+    "entities": [
+      "Board, the Federal Deposit Insurance Corporation",
+      "Basel Committee",
+      "Basel III reforms published by the Basel Committee"
+    ],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2023",
+      "2007-09",
+      "2013"
+    ],
+    "scope": "United States",
+    "num_pages": 9,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "GRM Overseas_Annual Report FY 2025.pdf",
+    "title": null,
+    "entities": [
+      "Overseas Limited",
+      "GRM Overseas Limited"
+    ],
+    "document_type": "annual_report",
+    "periods": [
+      "FY 2025",
+      "2024",
+      "2023",
+      "2024-25",
+      "2023-24"
+    ],
+    "scope": "India",
+    "num_pages": 265,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Metal Coatings_Annual Report FY 2026.pdf",
+    "title": null,
+    "entities": [
+      "BSE Limited"
+    ],
+    "document_type": "annual_report",
+    "periods": [
+      "FY 2026",
+      "2026",
+      "2025-26",
+      "2015",
+      "FY 2025-26"
+    ],
+    "scope": "India",
+    "num_pages": 143,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Metal Coatings_Annual Report FY 2025.pdf",
+    "title": null,
+    "entities": [
+      "MUFG Intime India Private Ltd",
+      "Link Intime India Private Ltd",
+      "The Hongkong and Shanghai Banking Corporation"
+    ],
+    "document_type": "annual_report",
+    "periods": [
+      "FY 2025",
+      "2024-25"
+    ],
+    "scope": "India",
+    "num_pages": 133,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "Refex Industries_Annual Report FY 202526.pdf",
+    "title": null,
+    "entities": [
+      "Refex Industries"
+    ],
+    "document_type": "annual_report",
+    "periods": [
+      "FY 2025-26"
+    ],
+    "scope": null,
+    "num_pages": 372,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "SAMA_EN_3575_VER1.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [],
+    "scope": "Middle East",
+    "num_pages": 92,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "10.1515_econ-2022-0073 (1).pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "regulatory_framework",
+    "periods": [
+      "2022-0073",
+      "2023",
+      "2024",
+      "2008",
+      "2014"
+    ],
+    "scope": "India",
+    "num_pages": 14,
+    "is_encrypted": false,
+    "is_empty": false
+  }
+]

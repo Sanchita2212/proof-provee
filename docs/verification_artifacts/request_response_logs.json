@@ -1,0 +1,397 @@
+[
+  {
+    "question_id": "B32",
+    "request": {
+      "collection_name": "training_full_corpus",
+      "query": "What individual stress capital buffer did the Fed assign to each US GSIB for the 2025-26 cycle, according to these capital proposals?"
+    },
+    "response": {
+      "answer": "The retrieved sources do not contain the individual stress capital buffer (SCB) requirements assigned to specific US GSIBs for the 2025-26 cycle. While the documents reference the stress capital buffer requirement and note that the Board proposed enhancements to the stress tests that inform the SCB on October 24, 2025 [board-memo-basel-gsib-standardized-approach.pdf p.2], they do not list firm-specific SCB levels. The material instead discusses the proposed changes to the GSIB surcharge framework [board-memo-basel-gsib-standardized-approach.pdf pp.8, 11-13] and general capital impact estimates by category.\n\nNo information was retrieved for this specific question.",
+      "latency_ms": 14267.65,
+      "citations": [
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": 13,
+          "section": "regulatory_framework"
+        },
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": 5,
+          "section": "regulatory_framework"
+        },
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": 2,
+          "section": "regulatory_framework"
+        },
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": 2,
+          "section": "regulatory_framework"
+        },
+        {
+          "document": "gsib-memo-change-summary.pdf",
+          "page": 5,
+          "section": "regulatory_framework"
+        },
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": 12,
+          "section": "regulatory_framework"
+        },
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": 8,
+          "section": "regulatory_framework"
+        },
+        {
+          "document": "board-memo-basel-gsib-standardized-approach.pdf",
+          "page": 11,
+          "section": "regulatory_framework"
+        }
+      ],
+      "trace": [
+        {
+          "step_name": "query_compilation",
+          "description": "Compiled user query into structured retrieval facets, entities, periods, and comparison constraints.",
+          "input": "What individual stress capital buffer did the Fed assign to each US GSIB for the 2025-26 cycle, according to these capital proposals?",
+          "output": "Entities: ['Fed', 'GSIB', 'Federal Reserve', 'US GSIBs'], Periods: ['2025-26', '2025-26 cycle', '2025', '2026'], Comparative: False, Facets: 4"
+        },
+        {
+          "step_name": "source_discrimination",
+          "description": "Discriminated and prioritized candidate documents using entity matching, period alignment, and document type signals.",
+          "input": "Total documents: 35; Requirements: ['Fed', 'GSIB', 'Federal Reserve', 'US GSIBs']",
+          "output": "Prioritized 5 documents: ['Integrated Annual Report 2025-26 Gammon India Limited.pdf', 'gsib-memo-change-summary.pdf', 'Inox Wind_Annual Report FY 2026.pdf', 'board-memo-basel-gsib-standardized-approach.pdf', 'Metal Coatings_Annual Report FY 2026.pdf']"
+        },
+        {
+          "step_name": "evidence_coverage",
+          "description": "Selected bounded evidence chunks maximizing marginal requirement coverage while eliminating redundancy.",
+          "input": "Evaluated 974 candidate chunks against 4 facets.",
+          "output": "Selected 8 chunks: ['board-memo-basel-gsib-standardized-approach.pdf p.13', 'board-memo-basel-gsib-standardized-approach.pdf p.5', 'board-memo-basel-gsib-standardized-approach.pdf p.2', 'board-memo-basel-gsib-standardized-approach.pdf p.2', 'gsib-memo-change-summary.pdf p.5', 'board-memo-basel-gsib-standardized-approach.pdf p.12', 'board-memo-basel-gsib-standardized-approach.pdf p.8', 'board-memo-basel-gsib-standardized-approach.pdf p.11']"
+        },
+        {
+          "step_name": "answer_generation",
+          "description": "Generated grounded answer with explicit document and page citations, adhering to source evidence.",
+          "input": "Provided 8 evidence chunks to LLM generator.",
+          "output": "Generated 89 words with 8 source citations."
+        }
+      ]
+    }
+  },
+  {
+    "question_id": "C31",
+    "request": {
+      "collection_name": "training_full_corpus",
+      "query": "How many Monte Carlo paths did the rough Bergomi pricing routine use to generate prices in the Chebyshev-tensor calibration study?"
+    },
+    "response": {
+      "answer": "The rough Bergomi Monte Carlo pricing routine used **60,000 paths** to generate the prices in the tests [2012.07440v3.pdf p.15]. This is corroborated on p.20, which notes the average evaluation time for the pricing function was measured \"in C++, using 60,000 paths\" [2012.07440v3.pdf p.20].",
+      "latency_ms": 8856.55,
+      "citations": [
+        {
+          "document": "2012.07440v3.pdf",
+          "page": 15,
+          "section": "general_document"
+        },
+        {
+          "document": "2012.07440v3.pdf",
+          "page": 17,
+          "section": "general_document"
+        },
+        {
+          "document": "2012.07440v3.pdf",
+          "page": 2,
+          "section": "general_document"
+        },
+        {
+          "document": "2012.07440v3.pdf",
+          "page": 13,
+          "section": "general_document"
+        },
+        {
+          "document": "2012.07440v3.pdf",
+          "page": 16,
+          "section": "general_document"
+        },
+        {
+          "document": "2012.07440v3.pdf",
+          "page": 22,
+          "section": "general_document"
+        },
+        {
+          "document": "2012.07440v3.pdf",
+          "page": 20,
+          "section": "general_document"
+        },
+        {
+          "document": "2012.07440v3.pdf",
+          "page": 23,
+          "section": "general_document"
+        }
+      ],
+      "trace": [
+        {
+          "step_name": "query_compilation",
+          "description": "Compiled user query into structured retrieval facets, entities, periods, and comparison constraints.",
+          "input": "How many Monte Carlo paths did the rough Bergomi pricing routine use to generate prices in the Chebyshev-tensor calibration study?",
+          "output": "Entities: ['Monte Carlo', 'Bergomi', 'Chebyshev-tensor'], Periods: [], Comparative: False, Facets: 4"
+        },
+        {
+          "step_name": "source_discrimination",
+          "description": "Discriminated and prioritized candidate documents using entity matching, period alignment, and document type signals.",
+          "input": "Total documents: 35; Requirements: ['Monte Carlo', 'Bergomi', 'Chebyshev-tensor']",
+          "output": "Prioritized 5 documents: ['10.1515_econ-2022-0073 (1).pdf', '2012.07440v3.pdf', '91fr14908.pdf', '91fr14952.pdf', '2f_lmf.pdf']"
+        },
+        {
+          "step_name": "evidence_coverage",
+          "description": "Selected bounded evidence chunks maximizing marginal requirement coverage while eliminating redundancy.",
+          "input": "Evaluated 472 candidate chunks against 4 facets.",
+          "output": "Selected 8 chunks: ['2012.07440v3.pdf p.15', '2012.07440v3.pdf p.17', '2012.07440v3.pdf p.2', '2012.07440v3.pdf p.13', '2012.07440v3.pdf p.16', '2012.07440v3.pdf p.22', '2012.07440v3.pdf p.20', '2012.07440v3.pdf p.23']"
+        },
+        {
+          "step_name": "answer_generation",
+          "description": "Generated grounded answer with explicit document and page citations, adhering to source evidence.",
+          "input": "Provided 8 evidence chunks to LLM generator.",
+          "output": "Generated 43 words with 8 source citations."
+        }
+      ]
+    }
+  },
+  {
+    "question_id": "A35",
+    "request": {
+      "collection_name": "training_full_corpus",
+      "query": "Who chairs the Risk Management Committee of Infosys?"
+    },
+    "response": {
+      "answer": "**D. Sundaram** chairs the Risk Management Committee of Infosys.\n\n- The Committee composition as on March 31, 2026 lists \"D. Sundaram, Chairperson\" among its seven independent-director members [infosys-ar-26.pdf p.108].\n- The Committee's report for the year ended March 31, 2026 is signed \"D. Sundaram, Chairperson\" (DIN: 00016304), dated April 15, 2026 [infosys-ar-26.pdf p.109].\n- The board-committee governance chart similarly shows D. Sundaram as Chairperson of the Risk Management Committee [infosys-ar-26.pdf p.98].\n\n(Note: Michael Gibbs is Chairperson of the Cybersecurity Risk Sub-committee, which reports to the Risk Management Committee [infosys-ar-26.pdf p.110].)",
+      "latency_ms": 11713.4,
+      "citations": [
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": 110,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": 109,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": 74,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": 108,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": 130,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": 92,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": 98,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "infosys-ar-26.pdf",
+          "page": 131,
+          "section": "integrated_annual_report"
+        }
+      ],
+      "trace": [
+        {
+          "step_name": "query_compilation",
+          "description": "Compiled user query into structured retrieval facets, entities, periods, and comparison constraints.",
+          "input": "Who chairs the Risk Management Committee of Infosys?",
+          "output": "Entities: ['Risk Management Committee', 'Infosys'], Periods: [], Comparative: False, Facets: 4"
+        },
+        {
+          "step_name": "source_discrimination",
+          "description": "Discriminated and prioritized candidate documents using entity matching, period alignment, and document type signals.",
+          "input": "Total documents: 35; Requirements: ['Risk Management Committee', 'Infosys']",
+          "output": "Prioritized 5 documents: ['10.1515_econ-2022-0073 (1).pdf', '2012.07440v3.pdf', 'BCBS-MarketRisk.pdf', 'RiskMetrics_-_Technical_Document.pdf', 'infosys-ar-26.pdf']"
+        },
+        {
+          "step_name": "evidence_coverage",
+          "description": "Selected bounded evidence chunks maximizing marginal requirement coverage while eliminating redundancy.",
+          "input": "Evaluated 1224 candidate chunks against 4 facets.",
+          "output": "Selected 8 chunks: ['infosys-ar-26.pdf p.110', 'infosys-ar-26.pdf p.109', 'infosys-ar-26.pdf p.74', 'infosys-ar-26.pdf p.108', 'infosys-ar-26.pdf p.130', 'infosys-ar-26.pdf p.92', 'infosys-ar-26.pdf p.98', 'infosys-ar-26.pdf p.131']"
+        },
+        {
+          "step_name": "answer_generation",
+          "description": "Generated grounded answer with explicit document and page citations, adhering to source evidence.",
+          "input": "Provided 8 evidence chunks to LLM generator.",
+          "output": "Generated 90 words with 8 source citations."
+        }
+      ]
+    }
+  },
+  {
+    "question_id": "A34",
+    "request": {
+      "collection_name": "training_full_corpus",
+      "query": "What was Banque Saudi Fransi's NPL coverage ratio at the end of 2025?"
+    },
+    "response": {
+      "answer": "Banque Saudi Fransi's NPL coverage ratio was **178.4%** at the end of 2025, a decrease of 3.3 percentage points year-over-year [BSF-2025 Integrated Annual Report.pdf p.51].",
+      "latency_ms": 12721.23,
+      "citations": [
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": 198,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": 51,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": 209,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": 262,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": 208,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": 5,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": 274,
+          "section": "integrated_annual_report"
+        },
+        {
+          "document": "BSF-2025 Integrated Annual Report.pdf",
+          "page": 320,
+          "section": "integrated_annual_report"
+        }
+      ],
+      "trace": [
+        {
+          "step_name": "query_compilation",
+          "description": "Compiled user query into structured retrieval facets, entities, periods, and comparison constraints.",
+          "input": "What was Banque Saudi Fransi's NPL coverage ratio at the end of 2025?",
+          "output": "Entities: ['Banque Saudi Fransi', 'NPL'], Periods: ['2025'], Comparative: False, Facets: 4"
+        },
+        {
+          "step_name": "source_discrimination",
+          "description": "Discriminated and prioritized candidate documents using entity matching, period alignment, and document type signals.",
+          "input": "Total documents: 35; Requirements: ['Banque Saudi Fransi', 'NPL']",
+          "output": "Prioritized 5 documents: ['BSF-2025 Integrated Annual Report.pdf', 'FASB ASC 326 Update.pdf', 'CEATIntegratedAnnualReport2526Re.pdf', 'board-memo-basel-gsib-standardized-approach.pdf', 'Bhadora Industries_Annual Report.pdf']"
+        },
+        {
+          "step_name": "evidence_coverage",
+          "description": "Selected bounded evidence chunks maximizing marginal requirement coverage while eliminating redundancy.",
+          "input": "Evaluated 863 candidate chunks against 4 facets.",
+          "output": "Selected 8 chunks: ['BSF-2025 Integrated Annual Report.pdf p.198', 'BSF-2025 Integrated Annual Report.pdf p.51', 'BSF-2025 Integrated Annual Report.pdf p.209', 'BSF-2025 Integrated Annual Report.pdf p.262', 'BSF-2025 Integrated Annual Report.pdf p.208', 'BSF-2025 Integrated Annual Report.pdf p.5', 'BSF-2025 Integrated Annual Report.pdf p.274', 'BSF-2025 Integrated Annual Report.pdf p.320']"
+        },
+        {
+          "step_name": "answer_generation",
+          "description": "Generated grounded answer with explicit document and page citations, adhering to source evidence.",
+          "input": "Provided 8 evidence chunks to LLM generator.",
+          "output": "Generated 25 words with 8 source citations."
+        }
+      ]
+    }
+  },
+  {
+    "question_id": "A33",
+    "request": {
+      "collection_name": "training_full_corpus",
+      "query": "Which rating agency rates Refex Industries' bank facilities, and what long-term rating did it reaffirm?"
+    },
+    "response": {
+      "answer": "**Rating agency:** Acuit\u00e9 Ratings & Research Limited (SEBI Registered Credit Rating Agency) [Refex Industries_Annual Report FY 202526.pdf p.121; p.76].\n\n**Long-term rating reaffirmed:** ACUITE A-: Stable \u2014 reaffirmed for Long term Bank Facilities \u2013 Term Loans, vide letter dated January 08, 2026 [Refex Industries_Annual Report FY 202526.pdf p.121; p.76].",
+      "latency_ms": 8655.19,
+      "citations": [
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": 121,
+          "section": "annual_report"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": 76,
+          "section": "annual_report"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": 150,
+          "section": "annual_report"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": 36,
+          "section": "annual_report"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": 153,
+          "section": "annual_report"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": 240,
+          "section": "annual_report"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": 323,
+          "section": "annual_report"
+        },
+        {
+          "document": "Refex Industries_Annual Report FY 202526.pdf",
+          "page": 344,
+          "section": "annual_report"
+        }
+      ],
+      "trace": [
+        {
+          "step_name": "query_compilation",
+          "description": "Compiled user query into structured retrieval facets, entities, periods, and comparison constraints.",
+          "input": "Which rating agency rates Refex Industries' bank facilities, and what long-term rating did it reaffirm?",
+          "output": "Entities: ['Refex Industries'], Periods: [], Comparative: False, Facets: 3"
+        },
+        {
+          "step_name": "source_discrimination",
+          "description": "Discriminated and prioritized candidate documents using entity matching, period alignment, and document type signals.",
+          "input": "Total documents: 35; Requirements: ['Refex Industries']",
+          "output": "Prioritized 5 documents: ['10.1515_econ-2022-0073 (1).pdf', '2012.07440v3.pdf', 'Refex Industries_Annual Report FY 202526.pdf', 'FDIC Interagency CECL Statement.pdf', 'Bhadora Industries_Annual Report.pdf']"
+        },
+        {
+          "step_name": "evidence_coverage",
+          "description": "Selected bounded evidence chunks maximizing marginal requirement coverage while eliminating redundancy.",
+          "input": "Evaluated 963 candidate chunks against 3 facets.",
+          "output": "Selected 8 chunks: ['Refex Industries_Annual Report FY 202526.pdf p.121', 'Refex Industries_Annual Report FY 202526.pdf p.76', 'Refex Industries_Annual Report FY 202526.pdf p.150', 'Refex Industries_Annual Report FY 202526.pdf p.36', 'Refex Industries_Annual Report FY 202526.pdf p.153', 'Refex Industries_Annual Report FY 202526.pdf p.240', 'Refex Industries_Annual Report FY 202526.pdf p.323', 'Refex Industries_Annual Report FY 202526.pdf p.344']"
+        },
+        {
+          "step_name": "answer_generation",
+          "description": "Generated grounded answer with explicit document and page citations, adhering to source evidence.",
+          "input": "Provided 8 evidence chunks to LLM generator.",
+          "output": "Generated 48 words with 8 source citations."
+        }
+      ]
+    }
+  }
+]

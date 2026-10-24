@@ -1,0 +1,24 @@
+[
+  {
+    "filename": "test_report_fy25.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [],
+    "scope": null,
+    "num_pages": 1,
+    "is_encrypted": false,
+    "is_empty": false
+  },
+  {
+    "filename": "test_report_fy26.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [],
+    "scope": null,
+    "num_pages": 1,
+    "is_encrypted": false,
+    "is_empty": false
+  }
+]

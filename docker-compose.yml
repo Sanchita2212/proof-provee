@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  smart-kb-api:
+    build: .
+    container_name: smart_kb_api
+    ports:
+      - "8000:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - LLM_PROVIDER=groq
+      - LLM_BASE_URL=https://api.groq.com/openai/v1
+      - LLM_MODEL=llama-3.3-70b-versatile
+      - LLM_API_KEY=${LLM_API_KEY}
+      - LANGFUSE_ENABLED=false
+    volumes:
+      - ./data_storage:/app/data_storage
+    restart: unless-stopped

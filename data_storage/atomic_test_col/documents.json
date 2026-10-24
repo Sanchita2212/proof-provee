@@ -1,0 +1,16 @@
+[
+  {
+    "filename": "v1_doc.pdf",
+    "title": null,
+    "entities": [],
+    "document_type": "general_document",
+    "periods": [
+      "2005",
+      "2004"
+    ],
+    "scope": "India",
+    "num_pages": 14,
+    "is_encrypted": false,
+    "is_empty": false
+  }
+]
